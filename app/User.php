@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //Relacion de muchos a uno
+    public function contact(){
+        return $this->belongsTO('App\User', 'user_id');
+    }
 }
